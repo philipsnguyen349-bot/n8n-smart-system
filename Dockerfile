@@ -1,19 +1,4 @@
 FROM docker.n8n.io/n8nio/n8n:latest
 
-USER root
-
-# Cài đặt công cụ hỗ trợ AI và Scripting cho hệ thống của anh
-RUN apk add --update --no-cache \
-    python3 \
-    py3-pip \
-    curl \
-    git \
-    g++ \
-    make \
-    libffi-dev \
-    openssl-dev
-
-# Chuyển về quyền user thấp để bảo mật
+# Bản này dùng trực tiếp n8n chính thức, lược bỏ cài thêm công cụ để tránh lỗi build
 USER node
-
-EXPOSE 5678

@@ -1,9 +1,13 @@
 FROM docker.n8n.io/n8nio/n8n:latest
 
 USER root
-RUN apk add --no-cache \
+
+# Dùng lệnh apt-get thay vì apk vì n8n bản mới dùng Debian
+RUN apt-get update && apt-get install -y \
     python3 \
-    py3-pip \
+    python3-pip \
     curl \
     git \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/lib/apt/lists/*
+
+USER node

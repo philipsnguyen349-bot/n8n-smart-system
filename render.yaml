@@ -16,13 +16,7 @@ services:
         value: https
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
-      
-      # Cấu hình Webhook (Để trống, sau khi có link Render sẽ điền vào sau)
       - key: WEBHOOK_URL
         sync: false
       - key: N8N_HOST
         sync: false
-
-      # Tối ưu cho bản Free không dùng Database ngoài
-      - key: N8N_METRICS
-        value: "true"

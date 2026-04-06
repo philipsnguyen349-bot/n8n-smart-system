@@ -2,21 +2,8 @@ services:
   - type: web
     name: n8n-philips-smart-system
     env: docker
-    dockerfilePath: ./Dockerfile
     plan: free
     region: singapore
     envVars:
-      - key: TZ
-        value: Asia/Ho_Chi_Minh
-      - key: GENERIC_TIMEZONE
-        value: Asia/Ho_Chi_Minh
       - key: N8N_PORT
         value: 5678
-      - key: N8N_PROTOCOL
-        value: https
-      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
-        value: "true"
-      - key: WEBHOOK_URL
-        sync: false
-      - key: N8N_HOST
-        sync: false

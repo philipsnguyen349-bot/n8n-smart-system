@@ -17,22 +17,12 @@ services:
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "true"
       
-      # KẾT NỐI DATABASE VĨNH CỬU (Thay bằng thông tin từ Supabase của anh)
-      - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_DATABASE
-        value: postgres
-      - key: DB_POSTGRESDB_HOST
-        value: db.xxxx.supabase.co # <--- THAY HOST CỦA ANH VÀO ĐÂY
-      - key: DB_POSTGRESDB_PORT
-        value: 5432
-      - key: DB_POSTGRESDB_USER
-        value: postgres
-      - key: DB_POSTGRESDB_PASSWORD
-        value: mat-khau-cua-anh # <--- THAY PASSWORD CỦA ANH VÀO ĐÂY
-
-      # CẤU HÌNH WEBHOOK (Sau khi deploy xong Render anh mới quay lại sửa link này)
+      # Cấu hình Webhook (Để trống, sau khi có link Render sẽ điền vào sau)
       - key: WEBHOOK_URL
         sync: false
       - key: N8N_HOST
         sync: false
+
+      # Tối ưu cho bản Free không dùng Database ngoài
+      - key: N8N_METRICS
+        value: "true"
